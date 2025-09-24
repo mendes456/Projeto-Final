@@ -1,6 +1,7 @@
 package br.com.creche_pet.model;
 
 import java.io.Serializable;
+import java.sql.Timestamp;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -10,41 +11,40 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="dono", schema="creche_pet")
+@Table(name = "dono", schema = "creche_pet")
 public class DonoModel implements Serializable {
 
-	
 	private static final long serialVersionUID = 1L;
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	
-	@Column(name="id_dono")
+
+	@Column(name = "id_dono")
 	private Long idDono;
-	
-	@Column(name="nome")
+
+	@Column(name = "nome")
 	private String nome;
-	
-	@Column(name="sobrenome")
+
+	@Column(name = "sobrenome")
 	private String sobrenome;
-	
-	@Column(name="cpf")
+
+	@Column(name = "cpf")
 	private String cpf;
 
-	@Column(name="rg")
+	@Column(name = "rg")
 	private String rg;
 
-	@Column(name="telefone")
+	@Column(name = "telefone")
 	private String telefone;
 
-	@Column(name="email")
+	@Column(name = "email")
 	private String email;
-	
-	@Column(name="id_endereco")
+
+	@Column(name = "data")
+	private Timestamp data;
+
+	@Column(name = "id_endereco")
 	private Long idEndereco;
-	
-	
-	
 
 	public Long getIdDono() {
 		return idDono;
@@ -102,6 +102,14 @@ public class DonoModel implements Serializable {
 		this.email = email;
 	}
 
+	public Timestamp getData() {
+		return data;
+	}
+
+	public void setData(Timestamp data) {
+		this.data = data;
+	}
+
 	public Long getIdEndereco() {
 		return idEndereco;
 	}
@@ -109,8 +117,5 @@ public class DonoModel implements Serializable {
 	public void setIdEndereco(Long idEndereco) {
 		this.idEndereco = idEndereco;
 	}
-
-	
-	
 
 }

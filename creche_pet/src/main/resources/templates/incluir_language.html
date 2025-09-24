@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Itens</title>
+	<!-- Bootstrap CSS local -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-4">
+       <h2> Incluir Novo Idioma </h2>
+	   
+	   <!--exibe mensagens-->
+	   <div th:if="${mensagem}" class="alert alert-sucess" th:text="${mensagem}"></div>
+	   <div th:if="${erro}" class="alert alert-danger" th:text="${erro}"></div>
+	   
+	   
+	   
+	   <!--Formulário de inclusão-->
+	   <form th:action="@{/salvar}" th:object="${language}" method="post">
+		<div class="mb-3">
+			<label for="name" class="form-label"> Nome do Idioma:</label>
+			<input type="text" class="form-control" id="name" name="name" required>
+		</div>
+		
+		<!--th:field="*{name}" adicione mais campos aqui conforme sua entidade language-->
+		
+		<button type="submit" class="btn btn-sucess"> Salvar</button>
+		<a th:href="@{/}" class="btn btn-secondary"> Cancelar </a>
+		
+		
+	   </form>
+	   
+	   
+	   
+               
+        </div>
+    </div>
+
+	<!-- Bootstrap JS local (opcional, necessário apenas se você utilizar componentes que dependem de JavaScript) -->
+	<script src="js/bootstrap.bundle.min.js"></script>
+	
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Itens</title>
+	<!-- Bootstrap CSS local -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-4">
+       
+		
+		<h3><I>EDITAR LINGUAGENS</I></h3>
+		
+		<form th:action="@{/salvar}" th:object="${language}" method="post">
+			<input type="hidden" th:field= "*{languageId}" /> <!--fild=campo, hidden=oculto,escondido-->
+			
+			<label for="name">Nome:</label>
+			<input type="text" th:field="*{name}"/>
+			
+			<button type="submit">Salvar</button>
+			
+		</form>
+
+        </div>
+   
+
+	<!-- Bootstrap JS local (opcional, necessário apenas se você utilizar componentes que dependem de JavaScript) -->
+	<script src="js/bootstrap.bundle.min.js"></script>
+	
+</body>
+</html>
